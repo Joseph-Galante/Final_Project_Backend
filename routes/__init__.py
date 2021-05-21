@@ -1,4 +1,6 @@
-
+from .User_Routes import User_Routes
 
 def apply_routes (app):
-    pass
+    User_Routes.signup(app)
+    User_Routes.login(app)
+    User_Routes.verify_user(app)

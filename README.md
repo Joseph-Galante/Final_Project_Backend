@@ -39,9 +39,9 @@ Product Details
 ## Routes
 | Request | Route URL | Description | Takes In | Returns |
 | ------- | --------- | ----------- | -------- | ------- |
-| POST | /users | signup | name, email, password | user |
-| POST | /users/login | login | email, password |  user |
-| GET | /users/verify | verify user | auth id |  user |
+| POST | /users | signup | name, email, password | user |<!--*-->
+| POST | /users/login | login | email, password |  user |<!--*-->
+| GET | /users/verify | verify user | auth id |  user |<!--*-->
 | PUT | /users/update | update user info | auth id, name, email |  updated user |
 | GET | /users/reviews | get reviews about user | auth id | user's reviews |
 | GET | /users/cart | get user's cart | auth id | user's cart |
