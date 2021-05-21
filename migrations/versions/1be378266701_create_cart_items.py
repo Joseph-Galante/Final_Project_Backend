@@ -17,8 +17,15 @@ depends_on = None
 
 
 def upgrade():
-    pass
+    op.create_table(
+        'cart_items',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('user_id', sa.Integer),
+        sa.Column('product_id', sa.Integer),
+        sa.Column('order_id', sa.Integer),
+        sa.Column('complete', sa.Boolean, nullable=False),
+    )
 
 
 def downgrade():
-    pass
+    op.drop_table('cart_items')

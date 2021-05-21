@@ -17,8 +17,18 @@ depends_on = None
 
 
 def upgrade():
-    pass
+    op.create_table(
+        'orders',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('user_id', sa.Integer),
+        sa.Column('total', sa.Float, nullable=False),
+        sa.Column('address', sa.String, nullable=False),
+        sa.Column('city', sa.String, nullable=False),
+        sa.Column('state', sa.String, nullable=False),
+        sa.Column('zip', sa.String, nullable=False),
+        sa.Column('card', sa.String, nullable=False)
+    )
 
 
 def downgrade():
-    pass
+    op.drop_table('orders')

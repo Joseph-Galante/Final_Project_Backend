@@ -17,8 +17,13 @@ depends_on = None
 
 
 def upgrade():
-    pass
+    op.create_table(
+        'user_reviews',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('user_id', sa.Integer),
+        sa.Column('review_id', sa.Integer),
+    )
 
 
 def downgrade():
-    pass
+    op.drop_table('user_reviews')
