@@ -29,14 +29,14 @@ class Product_Controller ():
                 # create product
                 product = models.Product(
                     name = request.json["name"],
-                    desrciption = request.json["desrciption"]
+                    description = request.json["description"]
                 )
 
                 # add product to user
                 user.products.append(product)
 
                 # commit to session
-                models.db.session.add_all(user, product)
+                models.db.session.add_all([user, product])
                 models.db.session.commit()
 
                 return { 'message': 'Product created', 'product': product.to_json() }

@@ -46,10 +46,10 @@ Product Details
 | GET | /users/reviews | get reviews about user | auth id | user's reviews |<!--*-->
 | GET | /users/products | get user's products | auth id | user's products |<!--*-->
 | GET | /users/orders | get user's orders | auth id | user's orders |<!--*-->
-| GET | /products | get all products |  | all products |
-| GET | /products/:id | get one product |  | one product |
-| POST | /products | add new product | auth id, name, description | new product |
-| DELETE | /products/:id | remove product | auth id | message |
+| GET | /products | get all products |  | all products |<!--*-->
+| GET | /products/:id | get one product |  | one product |<!--*-->
+| POST | /products | add new product | auth id, name, description | new product |<!--*-->
+| DELETE | /products/:id | remove product | auth id | message |<!--*-->
 | GET | /cart | get user's cart | auth id | user's cart |
 | POST | /cart | add item to cart | auth id, product id | message, cart, product |
 | DELETE | /cart/:id | remove item from cart | auth id | message, cart |
