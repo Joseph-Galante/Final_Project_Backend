@@ -1,6 +1,8 @@
 # =================== IMPORTS =================== #
 
+# routes
 from .User_Routes import User_Routes
+from .Product_Routes import Product_Routes
 
 
 # =================== METHODS =================== #

@@ -8,7 +8,7 @@ app = Flask(__name__)
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
-# local imports
+# package imports
 import models
 import middleware
 
@@ -62,7 +62,7 @@ class User_Controller ():
             return { 'message': 'User verified', 'user': user.to_json() }
         # no user
         else:
-            return { 'message': 'No user found' }, 404
+            return { 'message': 'No user found' }, 401
 
     # edit user's info
     def update ():
@@ -86,7 +86,7 @@ class User_Controller ():
             return { 'message': 'User updated successfully', 'user': user.to_json() }
         # no user
         else:
-            return { 'message': 'No user found' }, 404
+            return { 'message': 'No user found' }, 401
 
     # get user reviews about user
     def get_reviews ():
@@ -100,7 +100,7 @@ class User_Controller ():
             return { 'message': 'User reviews found', 'reviews': [r.to_json() for r in reviews] }
         # no user
         else:
-            return { 'message': 'No user found' }, 404
+            return { 'message': 'No user found' }, 401
 
     # get user's products
     def get_products ():
@@ -114,7 +114,7 @@ class User_Controller ():
             return { 'message': 'User products found', 'products': [p.to_json() for p in products] }
         # no user
         else:
-            return { 'message': 'No user found' }, 404
+            return { 'message': 'No user found' }, 401
 
     # get user's orders
     def get_orders ():
@@ -128,4 +128,4 @@ class User_Controller ():
             return { 'message': 'User orders found', 'orders': [o.to_json() for o in orders] }
         # no user
         else:
-            return { 'message': 'No user found' }, 404
+            return { 'message': 'No user found' }, 401
