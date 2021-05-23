@@ -39,22 +39,22 @@ Product Details
 ## Routes
 | Request | Route URL | Description | Takes In | Returns |
 | ------- | --------- | ----------- | -------- | ------- |
-| POST | /users | signup | name, email, password | user |<!--*-->
-| POST | /users/login | login | email, password |  user |<!--*-->
-| GET | /users/verify | verify user | auth id |  user |<!--*-->
-| PUT | /users/update | update user info | auth id, name, email |  updated user |<!--*-->
-| GET | /users/reviews | get reviews about user | auth id | user's reviews |<!--*-->
-| GET | /users/products | get user's products | auth id | user's products |<!--*-->
-| GET | /users/orders | get user's orders | auth id | user's orders |<!--*-->
-| GET | /products | get all products |  | all products |<!--*-->
-| GET | /products/:id | get one product |  | one product |<!--*-->
-| POST | /products | add new product | auth id, name, description | new product |<!--*-->
-| DELETE | /products/:id | remove product | auth id | message |<!--*-->
-| GET | /cart | get user's cart | auth id | user's cart |<!--*-->
-| POST | /cart | add item to cart | auth id, product id | message, cart, product |<!--*-->
-| DELETE | /cart/:id | remove item from cart | auth id | message, cart |<!--*-->
-| GET | /orders | get user's orders | auth id | user's orders |<!--*-->
-| POST | /orders | create new order | auth id, address, city, state, zip, card | new order |<!--*-->
+| POST | /users | signup | name, email, password | user |
+| POST | /users/login | login | email, password |  user |
+| GET | /users/verify | verify user | auth id |  user |
+| PUT | /users/update | update user info | auth id, name, email |  updated user |
+| GET | /users/reviews | get reviews about user | auth id | user's reviews |
+| GET | /users/products | get user's products | auth id | user's products |
+| GET | /users/orders | get user's orders | auth id | user's orders |
+| GET | /products | get all products |  | all products |
+| GET | /products/:id | get one product |  | one product |
+| POST | /products | add new product | auth id, name, description | new product |
+| DELETE | /products/:id | remove product | auth id | message |
+| GET | /cart | get user's cart | auth id | user's cart |
+| POST | /cart | add item to cart | auth id, product id | message, cart, product |
+| DELETE | /cart/:id | remove item from cart | auth id | message, cart |
+| GET | /orders | get user's orders | auth id | user's orders |
+| POST | /orders | create new order | auth id, address, city, state, zip, card | new order |
 | POST | /reviews/users/:email | write review about user | auth id, description, rating | written review |
 | POST | /reviews/products/:id | write review about product | auth id, description, rating | written review |
 <!-- | Request | Route | Description | Takes | Returns | -->
