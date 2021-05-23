@@ -4,6 +4,7 @@
 from models import Product_Review
 from .User_Routes import User_Routes
 from .Product_Routes import Product_Routes
+from .Cart_Routes import Cart_Routes
 
 
 # =================== METHODS =================== #
@@ -22,3 +23,7 @@ def apply_routes (app):
     # product routes
     Product_Routes.all_products(app)
     Product_Routes.one_product(app)
+
+    # cart routes
+    Cart_Routes.all_items(app)
+    Cart_Routes.one_item(app)

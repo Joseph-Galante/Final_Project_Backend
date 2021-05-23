@@ -15,6 +15,7 @@ class Product (db.Model):
 
     def to_json (self):
         return {
+            "id": self.id,
             "name": self.name,
             "description": self.description
         }

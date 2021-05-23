@@ -13,6 +13,7 @@ class Review (db.Model):
 
     def to_json (self):
         return {
+            "id": self.id,
             "description": self.description,
             "rating": self.rating
         }

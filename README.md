@@ -50,9 +50,9 @@ Product Details
 | GET | /products/:id | get one product |  | one product |<!--*-->
 | POST | /products | add new product | auth id, name, description | new product |<!--*-->
 | DELETE | /products/:id | remove product | auth id | message |<!--*-->
-| GET | /cart | get user's cart | auth id | user's cart |
-| POST | /cart | add item to cart | auth id, product id | message, cart, product |
-| DELETE | /cart/:id | remove item from cart | auth id | message, cart |
+| GET | /cart | get user's cart | auth id | user's cart |<!--*-->
+| POST | /cart | add item to cart | auth id, product id | message, cart, product |<!--*-->
+| DELETE | /cart/:id | remove item from cart | auth id | message, cart |<!--*-->
 | POST | /orders | create new order | auth id, address, city, state, zip, card | new order |
 | POST | /reviews/users/:email | write review about user | auth id, description, rating | written review |
 | POST | /reviews/products/:id | write review about product | auth id, description, rating | written review |

@@ -15,5 +15,6 @@ class Cart_Item (db.Model):
 
     def to_json (self):
         return {
+            "id": self.id,
             "complete": self.complete
         }
