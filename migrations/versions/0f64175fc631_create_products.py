@@ -7,6 +7,7 @@ Create Date: 2021-05-21 11:04:13.810168
 """
 from alembic import op
 import sqlalchemy as sa
+from sqlalchemy.sql.expression import null
 
 
 # revision identifiers, used by Alembic.
@@ -22,6 +23,8 @@ def upgrade():
         sa.Column('id', sa.Integer, primary_key=True),
         sa.Column('name', sa.String, nullable=False),
         sa.Column('description', sa.String, nullable=False),
+        sa.Column('price', sa.Float, nullable=False),
+        sa.Column('image', sa.String),
         sa.Column('user_id', sa.Integer)
     )
 

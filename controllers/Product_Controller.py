@@ -29,7 +29,8 @@ class Product_Controller ():
                 # create product
                 product = models.Product(
                     name = request.json["name"],
-                    description = request.json["description"]
+                    description = request.json["description"],
+                    price = request.json["price"]
                 )
 
                 # add product to user

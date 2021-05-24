@@ -18,7 +18,7 @@ class User (db.Model):
     orders = db.relationship('Order', backref='user')
 
     def to_json (self):
-        encrypted_id = jwt.encode({ 'user_id': self.id }, os.environ.get('JWT_SECRET'), algorithm='HS256').decode('utf-8')
+        encrypted_id = jwt.encode({ 'user_id': self.id }, os.environ.get('JWT_SECRET'), algorithm='HS256')
         return {
             "id": encrypted_id,
             "name": self.name,

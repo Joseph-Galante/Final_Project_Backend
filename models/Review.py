@@ -15,5 +15,6 @@ class Review (db.Model):
         return {
             "id": self.id,
             "description": self.description,
-            "rating": self.rating
+            "rating": self.rating,
+            "writer": self.user.to_json()
         }
