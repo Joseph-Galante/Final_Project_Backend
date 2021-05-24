@@ -72,9 +72,10 @@ class User_Controller ():
         # check if user exists
         if user:
            # check for existing user with email
-            existing_user = models.User.query.filter(models.User.email == request.json["email"]).first()
-            if existing_user:
-                return { 'message': 'Duplicate emails'}, 409
+            if user.email != request.json["email"]:
+                existing_user = models.User.query.filter(models.User.email == request.json["email"]).first()
+                if existing_user:
+                    return { 'message': 'Duplicate emails'}, 409
             
             # update user info
             user.name = request.json["name"]
