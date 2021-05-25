@@ -45,7 +45,6 @@ Product Details
 | PUT | /users/update | update user info | auth id, name, email |  updated user |
 | GET | /users/reviews | get reviews about user | auth id | user's reviews |
 | GET | /users/products | get user's products | auth id | user's products |
-| GET | /users/orders | get user's orders | auth id | user's orders |
 | GET | /products | get all products |  | all products |
 | GET | /products/:id | get one product |  | one product |
 | POST | /products | add new product | auth id, name, description | new product |

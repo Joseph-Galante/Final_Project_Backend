@@ -20,7 +20,6 @@ def apply_routes (app):
     User_Routes.update(app)
     User_Routes.get_reviews(app)
     User_Routes.get_products(app)
-    User_Routes.get_orders(app)
 
     # product routes
     Product_Routes.all_products(app)

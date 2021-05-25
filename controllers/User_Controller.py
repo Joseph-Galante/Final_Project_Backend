@@ -116,17 +116,3 @@ class User_Controller ():
         # no user
         else:
             return { 'message': 'No user found' }, 401
-
-    # get user's orders
-    def get_orders ():
-        # grab user using encrypted id
-        user = middleware.User_Auth.verify_user(request.headers["Authorization"])
-        # check if user exists
-        if user:
-            # grab orders
-            orders = user.orders
-
-            return { 'message': 'User orders found', 'orders': [o.to_json() for o in orders] }
-        # no user
-        else:
-            return { 'message': 'No user found' }, 401
