@@ -17,12 +17,19 @@ class User (db.Model):
     products = db.relationship('Product', backref='user')
     orders = db.relationship('Order', backref='user')
 
-    def to_json (self):
+    def to_json (self, include_orders=False):
         encrypted_id = jwt.encode({ 'user_id': self.id }, os.environ.get('JWT_SECRET'), algorithm='HS256')
 
-        return {
-            "id": encrypted_id,
-            "name": self.name,
-            "email": self.email,
-            "orders": [o.to_json() for o in self.orders]
-        }
+        if include_orders:
+            return {
+                "id": encrypted_id,
+                "name": self.name,
+                "email": self.email,
+                "orders": [o.to_json() for o in self.orders]
+            }
+        else:
+            return {
+                "id": encrypted_id,
+                "name": self.name,
+                "email": self.email
+            }

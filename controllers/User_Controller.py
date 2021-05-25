@@ -46,7 +46,7 @@ class User_Controller ():
         if user:
             # check if passwords match
             if bcrypt.check_password_hash(user.password, request.json["password"]):
-                return { 'message': 'Login successful', 'user': user.to_json() }
+                return { 'message': 'Login successful', 'user': user.to_json(include_orders=True) }
             else:
                 return { 'message': 'Incorrect password' }, 401
         # no user
@@ -59,7 +59,7 @@ class User_Controller ():
         user = middleware.User_Auth.verify_user(request.headers["Authorization"])
         # check if user exists
         if user:
-            return { 'message': 'User verified', 'user': user.to_json() }
+            return { 'message': 'User verified', 'user': user.to_json(include_orders=True) }
         # no user
         else:
             return { 'message': 'No user found' }, 401
@@ -84,7 +84,7 @@ class User_Controller ():
             models.db.session.add(user)
             models.db.session.commit()
             
-            return { 'message': 'User updated successfully', 'user': user.to_json() }
+            return { 'message': 'User updated successfully', 'user': user.to_json(include_orders=True) }
         # no user
         else:
             return { 'message': 'No user found' }, 401

@@ -20,5 +20,6 @@ class Order (db.Model):
             "state": self.state,
             "zip": self.zip,
             "card": self.card,
-            "cart_items": [i.to_json() for i in self.cart_items]
+            "cart_items": [i.to_json() for i in self.cart_items],
+            "user": self.user.to_json()
         }
