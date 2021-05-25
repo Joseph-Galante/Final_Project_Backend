@@ -16,13 +16,22 @@ class Product (db.Model):
     reviews = db.relationship('Product_Review', backref='product')
     cart_items = db.relationship('Cart_Item', backref='product')
 
-    def to_json (self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "description": self.description,
-            "price": self.price,
-            "image": self.image if self.image else 'No image',
-            "seller": self.user.to_json(),
-            "reviews": [r.to_json() for r in self.reviews]
-        }
+    def to_json (self, include_reviews=True):
+        if include_reviews:
+            return {
+                "id": self.id,
+                "name": self.name,
+                "description": self.description,
+                "price": self.price,
+                "image": self.image if self.image else 'No image',
+                "seller": self.user.to_json(),
+                "reviews": [r.to_json() for r in self.reviews]
+            }
+        else:
+            return {
+                "id": self.id,
+                "name": self.name,
+                "description": self.description,
+                "price": self.price,
+                "image": self.image if self.image else 'No image'
+            }

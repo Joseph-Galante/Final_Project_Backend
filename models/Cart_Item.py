@@ -14,10 +14,10 @@ class Cart_Item (db.Model):
     
     order = db.relationship('Order', backref='cart_items')
 
-    def to_json (self):
+    def to_json (self, include_reviews=True):
         product = models.Product.query.filter(models.Product.id == self.product_id).first()
         return {
             "id": self.id,
             "complete": self.complete,
-            "product": product.to_json()
+            "product": product.to_json(include_reviews=include_reviews)
         }

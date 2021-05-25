@@ -34,6 +34,11 @@ class Order_Controller ():
                 )
                 # add order to user
                 user.orders.append(order)
+                # mark order items as complete
+                for item in user.cart_items:
+                    item.order = order
+                    item.complete = True
+                    models.db.session.add(item)
 
                 # commit to session
                 models.db.session.add_all([order, user])

@@ -19,5 +19,6 @@ class Order (db.Model):
             "city": self.city,
             "state": self.state,
             "zip": self.zip,
-            "card": self.card
+            "card": self.card,
+            "cart_items": [i.to_json(include_reviews=False) for i in self.cart_items]
         }
