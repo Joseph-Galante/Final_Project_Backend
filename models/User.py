@@ -19,8 +19,10 @@ class User (db.Model):
 
     def to_json (self):
         encrypted_id = jwt.encode({ 'user_id': self.id }, os.environ.get('JWT_SECRET'), algorithm='HS256')
+
         return {
             "id": encrypted_id,
             "name": self.name,
-            "email": self.email
+            "email": self.email,
+            "orders": [o.to_json() for o in self.orders]
         }
