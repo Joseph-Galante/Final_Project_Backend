@@ -14,7 +14,7 @@ class Cart_Item (db.Model):
     
     order = db.relationship('Order', backref='cart_items')
 
-    def to_json (self, include_reviews=True):
+    def to_json (self, include_reviews=False):
         product = models.Product.query.filter(models.Product.id == self.product_id).first()
         return {
             "id": self.id,

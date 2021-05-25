@@ -52,7 +52,7 @@ class Product_Controller ():
             product = models.Product.query.filter(models.Product.id == id).first()
             # check if product exists
             if product:
-                return { 'message': 'Product found', 'product': product.to_json() }
+                return { 'message': 'Product found', 'product': product.to_json(include_reviews=True) }
             # no product
             else:
                 return { 'message': 'No product found' }, 404

@@ -19,7 +19,7 @@ class Cart_Controller ():
         if user:
             if request.method == 'GET':
                 # grab user's cart
-                cart = models.Cart_Item.query.filter(models.Cart_Item.user_id == user.id and models.Cart_Item.complete == False).all()
+                cart = models.Cart_Item.query.filter(models.Cart_Item.user_id == user.id, models.Cart_Item.complete == False).all()
 
                 return { 'message': 'Cart found', 'cart': [item.to_json() for item in cart]}
             elif request.method == 'POST':

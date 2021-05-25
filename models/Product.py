@@ -16,7 +16,7 @@ class Product (db.Model):
     reviews = db.relationship('Product_Review', backref='product')
     cart_items = db.relationship('Cart_Item', backref='product')
 
-    def to_json (self, include_reviews=True):
+    def to_json (self, include_reviews=False):
         if include_reviews:
             return {
                 "id": self.id,
