@@ -23,7 +23,7 @@ class Product (db.Model):
                 "name": self.name,
                 "description": self.description,
                 "price": self.price,
-                "image": self.image if self.image else 'No image',
+                "image": self.image if self.image != '' else 'No image',
                 "seller": self.user.to_json(),
                 "reviews": [r.to_json() for r in self.reviews]
             }

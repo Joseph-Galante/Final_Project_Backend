@@ -30,7 +30,8 @@ class Product_Controller ():
                 product = models.Product(
                     name = request.json["name"],
                     description = request.json["description"],
-                    price = request.json["price"]
+                    price = request.json["price"],
+                    image = request.json["image"]
                 )
 
                 # add product to user
