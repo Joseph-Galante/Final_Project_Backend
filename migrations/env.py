@@ -8,7 +8,7 @@ import os
 
 from dotenv import load_dotenv
 load_dotenv()
-db_url = os.environ.get("DATABASE_URL")
+db_url = os.environ.get("DATABASE_URL").replace('postgres', 'postgresql')
 
 
 # this is the Alembic Config object, which provides
