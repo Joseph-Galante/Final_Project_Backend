@@ -19,6 +19,8 @@ class User (db.Model):
 
     def to_json (self, include_orders=False):
         encrypted_id = jwt.encode({ 'user_id': self.id }, os.environ.get('JWT_SECRET'), algorithm='HS256')
+        if type(encrypted_id) != 'string':
+            encrypted_id = encrypted_id.decode('utf-8')
 
         if include_orders:
             return {

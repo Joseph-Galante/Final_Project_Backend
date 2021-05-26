@@ -54,7 +54,7 @@ Product Details
 | DELETE | /cart/:id | remove item from cart | auth id | message, cart |
 | GET | /orders | get user's orders | auth id | user's orders |
 | POST | /orders | create new order | auth id, address, city, state, zip, card | new order |
-| POST | /reviews/users/:email | write review about user | auth id, description, rating | written review |
+| POST | /reviews/users/:id | write review about user | auth id, reviewee id, description, rating | written review |
 | POST | /reviews/products/:id | write review about product | auth id, description, rating | written review |
 <!-- | Request | Route | Description | Takes | Returns | -->
 

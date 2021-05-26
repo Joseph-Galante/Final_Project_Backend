@@ -12,14 +12,14 @@ import middleware
 
 class Review_Controller ():
 
-    def user_reviews (email):
+    def user_reviews (id):
         # grab user using encrypted id
         user = middleware.User_Auth.verify_user(request.headers["Authorization"])
         # check if user exists
         if user:
             if request.method == "POST":
-                # grab reviewee by email
-                reviewee = models.User.query.filter(models.User.email == email).first()
+                # grab reviewee using encrypted id
+                reviewee = middleware.User_Auth.verify_user(id)
                 # check if reviewee exists
                 if reviewee:
                     # create review
