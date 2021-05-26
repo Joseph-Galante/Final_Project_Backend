@@ -46,8 +46,9 @@ Product Details
 | GET | /users/reviews | get reviews about user | auth id | user's reviews |
 | GET | /users/products | get user's products | auth id | user's products |
 | GET | /products | get all products |  | all products |
-| GET | /products/:id | get one product |  | one product |
 | POST | /products | add new product | auth id, name, description | new product |
+| GET | /products/:id | get one product |  | one product |
+| PUT | /products/:id | update product | auth id, price | updated product |
 | DELETE | /products/:id | remove product | auth id | message |
 | GET | /cart | get user's cart | auth id | user's cart |
 | POST | /cart | add item to cart | auth id, product id | message, cart, product |
