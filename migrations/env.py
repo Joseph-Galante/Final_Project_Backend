@@ -8,8 +8,12 @@ import os
 
 from dotenv import load_dotenv
 load_dotenv()
-db_url = os.environ.get("DATABASE_URL").replace('postgres', 'postgresql')
-
+db_url = os.environ.get("DATABASE_URL")
+if os.environ.get("ENV") == 'dev':
+    db_url = db_url.replace('postgres', 'postgresql')
+    db_url = db_url.replace('username', 'postgres')
+elif os.environ.get("ENV") == 'prod':
+    db_url = db_url.replace('postgres', 'postgresql')
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

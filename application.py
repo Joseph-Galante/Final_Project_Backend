@@ -10,7 +10,13 @@ from routes import apply_routes
 load_dotenv()
 app = Flask(__name__)
 CORS(app)
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL').replace('postgres', 'postgresql')
+db_url = os.environ.get("DATABASE_URL")
+if os.environ.get("ENV") == 'dev':
+    db_url = db_url.replace('postgres', 'postgresql')
+    db_url = db_url.replace('username', 'postgres')
+elif os.environ.get("ENV") == 'prod':
+    db_url = db_url.replace('postgres', 'postgresql')
+app.config["SQLALCHEMY_DATABASE_URI"] = db_url
 models.db.init_app(app)
 
 def root():
