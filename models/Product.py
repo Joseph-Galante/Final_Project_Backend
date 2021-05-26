@@ -24,7 +24,7 @@ class Product (db.Model):
                 "description": self.description,
                 "price": self.price,
                 "image": self.image if self.image != '' else 'No image',
-                "seller": self.user.to_json(),
+                "seller": self.user.to_json(include_orders=False),
                 "reviews": [r.to_json() for r in self.reviews]
             }
         else:
@@ -33,5 +33,6 @@ class Product (db.Model):
                 "name": self.name,
                 "description": self.description,
                 "price": self.price,
-                "image": self.image if self.image else 'No image'
+                "image": self.image if self.image else 'No image',
+                "seller": self.user.to_json(include_orders=False)
             }

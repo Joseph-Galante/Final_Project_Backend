@@ -57,6 +57,23 @@ class Product_Controller ():
             # no product
             else:
                 return { 'message': 'No product found' }, 404
+        # update product
+        if request.method == "PUT":
+            # grab one product
+            product = models.Product.query.filter(models.Product.id == id).first()
+            # check if product exists
+            if product:
+                # update product price
+                product.price = request.json["price"]
+                # commit to session
+                models.db.session.add(product)
+                models.db.session.commit()
+
+                return { 'message': 'Product updated', 'product': product.to_json(include_reviews=True) }
+            # no product
+            else:
+                return { 'message': 'No product found' }, 404
+
         # remove product
         elif request.method == "DELETE":
             # grab user using encrypted id
