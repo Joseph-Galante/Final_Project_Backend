@@ -1,7 +1,7 @@
 # Anduin
 
 ### Deployed Link
-**TBD**
+https://anduin-database.herokuapp.com/
 
 ## Overview
 Introducing your one stop shop for all your buying and selling needs. From anywhere in the world, to anywhere in the world, at any time. Anduin.
@@ -10,7 +10,7 @@ Introducing your one stop shop for all your buying and selling needs. From anywh
 
 ERD
 
-![wireframe](https://i.imgur.com/SAmhMss.png)
+![wireframe](https://i.imgur.com/Ld4BWhJ.png)
 
 Home
 
@@ -30,10 +30,10 @@ Product Details
 2. I see links to view the home screen, and depending on whether I am logged in or not: I see links to my profile and logout or signup and login, respectively
 3. At the signup screen, I am able to enter a name, email, and password to make an account and be logged in
 4. At the login screen, I am able to enter an email and password to login to an existing account
-5. While on the home page, I am able to click on a single product to view its details and if I am logged in, I can add it to my cart, as well as add my own new product
-6. While viewing a products details I see the product's seller, description, overall rating, and reviews. I am able to add the item to my cart. If logged in, I can leave a review about the product
-7. If I click on the seller's link I go to their profile and can view their info, reviews, overall rating, and if I am logged in I can leave a review
-7. While viewing my profile, there are links to see and edit my account info, as well as see my cart, products, and orders
+5. While on the home page, I am able to click on a single product to be brought to the login page or the product's details if I am logged in. If I am logged in, I can also add it to my cart without looking at its details
+6. While viewing a products details I see the product's seller, description, overall rating, and reviews. I am able to add the item to my cart and I can leave a review about the product
+7. If I click on the seller's name I go to a page where I can write a review about the seller
+7. While viewing my profile, there are links to see and edit my account info, as well as see my cart, products, orders, reviews, and add a new product to sell
 
 
 ## Routes
@@ -62,13 +62,13 @@ Product Details
     
 ## MVP Goals
 - User creation and auth
-- User profile shows user's info (which can be updated), cart, products, and orders
+- User profile shows user's info (which can be updated), cart, products, orders, reviews, and add product
 - User can write reviews about other users and products
 - User can add items to their cart as well as remove them and checkout at any time
 - User can view all products, and if logged in: submit new products to sell
 
 ## Stretch Goals
 - CSS
-- Notifications
 - Better UI (cart item qty icon, dark theme)
+- Notifications
 - Friends list or favorited sellers
