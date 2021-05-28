@@ -11,10 +11,10 @@ class Review (db.Model):
     user_reviews = db.relationship('User_Review', backref='review')
     product_reviews = db.relationship('Product_Review', backref='review')
 
-    def to_json (self):
+    def to_json (self, include_orders=True):
         return {
             "id": self.id,
             "description": self.description,
             "rating": self.rating,
-            "writer": self.user.to_json()
+            "writer": self.user.to_json(include_orders=include_orders)
         }
